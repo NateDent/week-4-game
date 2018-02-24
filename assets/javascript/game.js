@@ -3,7 +3,7 @@ var wins = 0;
 var losses = 0;
 var addition = 0;
 //selects a random number from 19-120
-var total = Math.floor((Math.random()* 120) + 19);
+var total = Math.floor((Math.random()* 100) + 19);
 //assigns random  to crystals from 1-12
 var red = Math.floor((Math.random()* 12) + 1);
 var blue = Math.floor((Math.random()* 12) + 1);
