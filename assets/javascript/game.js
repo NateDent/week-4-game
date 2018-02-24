@@ -1,17 +1,16 @@
-//globle variables
+
 var wins = 0;
 var losses = 0;
-//players currunt score
 var addition = 0;
-//selects a random number from 19 t0 120
-var total = Math.floor((Math.random()* 100) + 19);
-//assigns random value to crystals from 1-12
+//selects a random number from 19-120
+var total = Math.floor((Math.random()* 120) + 19);
+//assigns random  to crystals from 1-12
 var red = Math.floor((Math.random()* 12) + 1);
 var blue = Math.floor((Math.random()* 12) + 1);
 var yellow = Math.floor((Math.random()* 12) + 1);
 var green = Math.floor((Math.random()* 12) + 1);
 
-//updates addition in html
+//updates html with jquery
 var updateAddition = function (){
 	$('.addition').empty();
 	$('.addition').append(addition);
@@ -20,7 +19,7 @@ var updateAddition = function (){
 	$('#losses').empty();
 	$('#losses').append(losses);
 }
-//restart function
+//restart the entire game
 var restart = function(){
 	addition = 0;
     total = Math.floor((Math.random()* 100) + 19);
@@ -32,14 +31,11 @@ var restart = function(){
     blue = Math.floor((Math.random()* 12) + 1);
     yellow = Math.floor((Math.random()* 12) + 1);
     green = Math.floor((Math.random()* 12) + 1);
-    //alert('restart');
     updateAddition();
 }
 var logic = function (){
 	if (addition == total) {
-		wins = wins + 1;
-		
-		
+		wins = wins + 1;	
 		restart();
 	}else if(addition > total){
 		losses = losses + 1;
@@ -51,7 +47,6 @@ var logic = function (){
 $('.total').append(total);
 
 $('.addition').append(addition);
-//function
 
 $(document).ready(function(){
 	$('#red').click(function(){
